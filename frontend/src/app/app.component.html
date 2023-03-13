@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light m-2">
+    <a class="navbar-brand">Navbar</a>    
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">       
+        <a class="nav-item nav-link active" routerLink="/auth" routerLinkActive="active">Login</a>
+        <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
+        <a class="nav-item nav-link" (click)="onLogout()">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>

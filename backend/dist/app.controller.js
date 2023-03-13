@@ -17,11 +17,15 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth/auth.service");
 const jwt_auth_guard_1 = require("./auth/jwt-auth.guard");
 const local_auth_guard_1 = require("./auth/local-auth.guard");
+const users_service_1 = require("./users/users.service");
 let AppController = class AppController {
-    constructor(authService) {
+    constructor(authService, userService) {
         this.authService = authService;
+        this.userService = userService;
     }
     async login(req) {
+        console.log(" I am in backend ");
+        console.log(req.user);
         return this.authService.login(req.user);
     }
     getProfile(req) {
@@ -46,7 +50,7 @@ __decorate([
 ], AppController.prototype, "getProfile", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
-    __metadata("design:paramtypes", [auth_service_1.AuthService])
+    __metadata("design:paramtypes", [auth_service_1.AuthService, users_service_1.UsersService])
 ], AppController);
 exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

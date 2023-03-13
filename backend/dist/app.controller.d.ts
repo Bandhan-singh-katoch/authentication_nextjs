@@ -1,7 +1,9 @@
 import { AuthService } from './auth/auth.service';
+import { UsersService } from './users/users.service';
 export declare class AppController {
     private authService;
-    constructor(authService: AuthService);
+    private userService;
+    constructor(authService: AuthService, userService: UsersService);
     login(req: any): Promise<{
         access_token: string;
     }>;
